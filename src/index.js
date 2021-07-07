@@ -1,12 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import MyFunction1 from "./myFunction1";
+import ACIMTimer from "./ACIMTimer";
+import { ChakraProvider } from "@chakra-ui/react";
 
 function App() {
   return (
-    <div className="App">
-      <MyFunction1 />
-    </div>
+    <ChakraProvider>
+      <ACIMTimer />
+    </ChakraProvider>
   );
 }
 

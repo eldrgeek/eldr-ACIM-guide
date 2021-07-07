@@ -1,10 +1,10 @@
 import * as React from "react";
 import workercode from "./workercode";
 import timerWorker from "./timerWorker";
-
+import { Button, Box } from "@chakra-ui/react";
 import useWorker from "./useWorker";
 
-const MyFunction = () => {
+const ACIMTimer = () => {
   const [state, setState] = React.useState({});
   const [timerState, setTimerState] = React.useState({});
   const onMessage = (ev) => {
@@ -25,16 +25,18 @@ const MyFunction = () => {
   };
 
   return (
-    <div>
+    <Box>
       <h1> BG test </h1>
       Button test {state.count} {state.instance}
       <br />
       {timerState.hour} {timerState.minute} {timerState.second}
       <br />
-      <button onClick={resetCount}>Reset</button>
-      <button onClick={resetTimer}>Timer</button>
-    </div>
+      <Button m={2} onClick={resetCount}>
+        Reset
+      </Button>
+      <Button onClick={resetTimer}>Timer</Button>
+    </Box>
   );
 };
 
-export default MyFunction;
+export default ACIMTimer;
